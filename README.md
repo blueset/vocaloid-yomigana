@@ -1,6 +1,6 @@
 # Vocaloid song title yomigana ボカロ曲名よみがなデータ
 
-An incomplete list of Vocaloid song title yomigana data, based on the [database dump](https://github.com/blueset/vocaloid-database-dump) of Vocaloid Wiki on Fandom, 初音ミク Wiki (atwiki) and VocaDB, with 2171, 3500 and 82721 usable entries from each source.
+An incomplete list of Vocaloid song title yomigana data, based on the [database dump](https://github.com/blueset/vocaloid-database-dump) of Vocaloid Wiki on Fandom, 初音ミク Wiki (atwiki) and VocaDB, with 2171, 26290 and 82721 usable entries from each source.
 
 ## Python Source
 
