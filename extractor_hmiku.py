@@ -2,21 +2,27 @@
 import json
 import csv
 import re
-with open("meta.json", "r") as f:
-    meta = json.load(f)
+import glob
+import tqdm
+import frontmatter
+
+#%%
+files = glob.glob("data/*.txt")
+
 
 # %%
 result = []
 pattern = re.compile(r"&furigana\(([^\)]+?)\)")
-for key, value in meta["meta"].items():
-    name = value["name"]
-    with open(key + ".wiki", "r") as f:
-        text = f.read()
+for file in tqdm.tqdm(files):
+    p = frontmatter.load(file)
+    name = p["title"]
+    text = p.content
     match = pattern.search(text)
     yomigana = match.group(1) if match else ""
     if yomigana == "clear":
         yomigana = ""
-    result.append((name, yomigana))
+    if yomigana:
+        result.append((name, yomigana))
         
 
 # %%
